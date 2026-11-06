@@ -61,14 +61,15 @@
     .s1 .pills { margin-top: auto; display: flex; flex-direction: column; align-items: flex-start; gap: 2.2cqw; }
 
     /* 2 · what is inside: callouts with lines */
-    .s2 .photo { object-position: 50% 70%; transform: scale(1.35); transform-origin: 50% 70%; }
-    .s2 .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,239,230,.96) 0%, rgba(245,239,230,.75) 27%, rgba(245,239,230,0) 45%); }
-    .callout { position: absolute; display: flex; align-items: center; gap: 0; }
-    .callout .box { background: #fff; border-radius: 3cqw; padding: 2.4cqw 3cqw; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.14); font-size: 3.4cqw; line-height: 1.25; width: 31cqw; }
-    .callout .box b { display: block; font-size: 3.9cqw; margin-bottom: .6cqw; }
-    .callout .line { height: 0; border-top: .5cqw dashed var(--olive); opacity: .7; }
-    .callout .dot { width: 3.4cqw; height: 3.4cqw; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 1.2cqw rgba(255,255,255,.8); flex: none; }
-    .callout.right { flex-direction: row-reverse; }
+    .s2 .photo { object-position: 50% 70%; transform: scale(1.1); transform-origin: 50% 70%; }
+    .s2 .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,239,230,.96) 0%, rgba(245,239,230,.75) 22%, rgba(245,239,230,0) 36%); }
+    /* Lines are drawn on the slide itself, so each dot sits exactly on its part of the jar */
+    .leaders { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+    .leaders path { fill: none; stroke: var(--olive); stroke-width: .55; stroke-dasharray: 1.5 1.1; stroke-linecap: round; }
+    .leaders .halo { fill: rgba(255,255,255,.85); }
+    .leaders .dot { fill: var(--gold); }
+    .callout { position: absolute; z-index: 2; background: #fff; border-radius: 3cqw; padding: 2.2cqw 2.8cqw; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.14); font-size: 3.3cqw; line-height: 1.25; width: 28cqw; }
+    .callout b { display: block; font-size: 3.7cqw; margin-bottom: .6cqw; }
 
     /* 3 · the wooden wick */
     .s3 .photo { object-position: 46% 50%; transform: scale(1.25); }
@@ -165,9 +166,14 @@
         <span class="kicker">Состав</span>
         <p class="t">Что <em>внутри</em></p>
       </div>
-      <div class="callout" style="left:4cqw; top:43%"><div class="box"><b>Золотая крышка</b>Аромат не выветривается</div><div class="line" style="width:13cqw"></div><div class="dot"></div></div>
-      <div class="callout right" style="right:4cqw; top:60%"><div class="box"><b>100% соевый воск</b>Без парафина и копоти</div><div class="line" style="width:11cqw"></div><div class="dot"></div></div>
-      <div class="callout" style="left:4cqw; top:77%"><div class="box"><b>Стеклянная банка</b>Пригодится после свечи</div><div class="line" style="width:14cqw"></div><div class="dot"></div></div>
+      <svg class="leaders" viewBox="0 0 100 133.33" aria-hidden="true">
+        <path d="M82 45 L60 55"/><circle class="halo" cx="60" cy="55" r="2.6"/><circle class="dot" cx="60" cy="55" r="1.6"/>
+        <path d="M31 77 L44 77"/><circle class="halo" cx="44" cy="77" r="2.6"/><circle class="dot" cx="44" cy="77" r="1.6"/>
+        <path d="M82 106 L60 117"/><circle class="halo" cx="60" cy="117" r="2.6"/><circle class="dot" cx="60" cy="117" r="1.6"/>
+      </svg>
+      <div class="callout" style="right:3cqw; top:24%"><b>Золотая крышка</b>Аромат не выветривается</div>
+      <div class="callout" style="left:3cqw; top:49%"><b>100% соевый воск</b>Без парафина и копоти</div>
+      <div class="callout" style="right:3cqw; top:64%"><b>Толстое стекло</b>Банка пригодится после свечи</div>
     </div></div>
 
     <!-- 3 · the detail that convinces -->
