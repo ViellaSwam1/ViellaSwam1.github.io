@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Аромасвеча «Сады» — концепт инфографики</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/playfair-display-cyrillic-500-normal.woff2") format("woff2"); unicode-range: U+0400-045F; }
+    @font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/playfair-display-latin-500-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+    @font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/playfair-display-cyrillic-500-italic.woff2") format("woff2"); unicode-range: U+0400-045F; }
+    @font-face { font-family: "Manrope"; font-weight: 200 800; font-display: swap; src: url("../fonts/manrope-cyrillic-wght-normal.woff2") format("woff2"); unicode-range: U+0400-045F; }
+    @font-face { font-family: "Manrope"; font-weight: 200 800; font-display: swap; src: url("../fonts/manrope-latin-wght-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2116; }
+
+    /* One palette for every slide */
+    :root {
+      --olive: #2f3a2c;
+      --cream: #f5efe6;
+      --sand: #e8dccb;
+      --gold: #b8914d;
+      --sage: #9fb18f;
+      --peony: #e48aa6;
+      --fig: #7f9a62;
+      --lav: #9c84d0;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #efe9e1; color: var(--olive); font: 16px/1.5 Manrope, system-ui, sans-serif; overflow-x: hidden; }
+    .ribbon { background: var(--olive); color: #fff; text-align: center; font-size: 13px; padding: 8px 16px; }
+    .ribbon a { color: #d9e6cf; }
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+    .intro { padding: 32px 0 6px; }
+    .intro h1 { font: 500 clamp(30px, 7vw, 44px)/1.1 "Playfair Display", Georgia, serif; margin: 0 0 8px; }
+    .intro p { margin: 0; color: #5e6a59; max-width: 720px; }
+
+    .slides { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 34px 20px 30px; max-width: 1240px; margin: 0 auto; }
+    .item { position: relative; flex: 0 0 80%; max-width: 380px; scroll-snap-align: center; }
+    .num { position: absolute; top: -24px; left: 2px; font-size: 12px; color: #7d8777; }
+    .slide { aspect-ratio: 3 / 4; border-radius: 14px; overflow: hidden; position: relative; container-type: inline-size; box-shadow: 0 14px 34px rgba(47,58,44,.18); background: var(--cream); }
+
+    /* shared pieces */
+    .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .layer { position: absolute; inset: 0; padding: 7cqw; display: flex; flex-direction: column; }
+    .kicker { display: inline-block; align-self: flex-start; padding: 1.6cqw 3.4cqw; border-radius: 99px; background: var(--olive); color: var(--cream); font-size: 3.4cqw; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .t { font: 500 10.5cqw/1.02 "Playfair Display", Georgia, serif; margin: 3cqw 0 0; }
+    .t em { font-style: italic; color: var(--gold); }
+    .lead { font-size: 4.3cqw; line-height: 1.35; margin: 2.4cqw 0 0; font-weight: 600; opacity: .8; }
+    .pill { display: inline-flex; align-items: center; gap: 1.8cqw; padding: 2.2cqw 3.6cqw; border-radius: 99px; background: #fff; font-size: 3.8cqw; font-weight: 800; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.12); }
+    .pill i { width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: var(--gold); flex: none; }
+
+    /* 1 · hook */
+    .s1 .photo { object-position: 50% 100%; transform: scale(1.18); transform-origin: 50% 85%; }
+    .s1 .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,239,230,.97) 0%, rgba(245,239,230,.85) 28%, rgba(245,239,230,0) 52%); }
+    .s1 .medal {
+      position: absolute; right: 6cqw; top: 47%; width: 25cqw; height: 25cqw; border-radius: 50%;
+      background: var(--olive); color: var(--cream); display: grid; place-content: center; text-align: center;
+      box-shadow: 0 0 0 1.4cqw rgba(255,255,255,.7);
+    }
+    .s1 .medal b { font: 500 10cqw/1 "Playfair Display", Georgia, serif; color: #e9cf98; }
+    .s1 .medal span { font-size: 3.2cqw; font-weight: 700; }
+    .s1 .pills { margin-top: auto; display: flex; flex-direction: column; align-items: flex-start; gap: 2.2cqw; }
+
+    /* 2 · what is inside: callouts with lines */
+    .s2 .photo { object-position: 50% 70%; transform: scale(1.35); transform-origin: 50% 70%; }
+    .s2 .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,239,230,.96) 0%, rgba(245,239,230,.75) 27%, rgba(245,239,230,0) 45%); }
+    .callout { position: absolute; display: flex; align-items: center; gap: 0; }
+    .callout .box { background: #fff; border-radius: 3cqw; padding: 2.4cqw 3cqw; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.14); font-size: 3.4cqw; line-height: 1.25; width: 31cqw; }
+    .callout .box b { display: block; font-size: 3.9cqw; margin-bottom: .6cqw; }
+    .callout .line { height: 0; border-top: .5cqw dashed var(--olive); opacity: .7; }
+    .callout .dot { width: 3.4cqw; height: 3.4cqw; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 1.2cqw rgba(255,255,255,.8); flex: none; }
+    .callout.right { flex-direction: row-reverse; }
+
+    /* 3 · the wooden wick */
+    .s3 .photo { object-position: 46% 50%; transform: scale(1.25); }
+    .s3 .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(47,58,44,0) 30%, rgba(47,58,44,.85) 62%, rgba(47,58,44,.97) 100%); }
+    .s3 .layer { color: var(--cream); justify-content: flex-end; }
+    .s3 .kicker { background: var(--gold); color: #fff; }
+    .s3 .t em { color: #e9cf98; }
+    .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4cqw; margin-top: 5cqw; }
+    .feat { background: rgba(255,255,255,.1); border: .3cqw solid rgba(255,255,255,.18); border-radius: 3cqw; padding: 3cqw 2cqw; text-align: center; font-size: 3.3cqw; line-height: 1.25; font-weight: 700; }
+    .feat svg { width: 8cqw; height: 8cqw; display: block; margin: 0 auto 1.6cqw; }
+
+    /* 4 · size and burn time: dimension lines */
+    .s4 .photo { object-position: 46% 60%; }
+    .s4 .fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,239,230,.97) 0%, rgba(245,239,230,.8) 26%, rgba(245,239,230,0) 44%); }
+    .dim { position: absolute; color: #fff; font-weight: 800; font-size: 4cqw; }
+    .dim.v { border-left: .5cqw solid #fff; }
+    .dim.v::before, .dim.v::after, .dim.h::before, .dim.h::after { content: ""; position: absolute; background: #fff; }
+    .dim.v::before, .dim.v::after { left: -2.2cqw; width: 4cqw; height: .5cqw; }
+    .dim.v::before { top: 0; } .dim.v::after { bottom: 0; }
+    .dim.v span { position: absolute; top: 50%; right: 2.4cqw; transform: translateY(-50%); background: var(--olive); padding: 1cqw 2.2cqw; border-radius: 99px; white-space: nowrap; }
+    .dim.h { border-top: .5cqw solid #fff; }
+    .dim.h::before, .dim.h::after { top: -2.2cqw; width: .5cqw; height: 4cqw; }
+    .dim.h::before { left: 0; } .dim.h::after { right: 0; }
+    .dim.h span { position: absolute; left: 50%; top: 2cqw; transform: translateX(-50%); background: var(--olive); padding: 1cqw 2.2cqw; border-radius: 99px; white-space: nowrap; }
+    .s4 .stats { position: absolute; left: 7cqw; top: 27%; width: 29cqw; display: grid; gap: 2.4cqw; }
+    .s4 .stat b { font-size: 8cqw; }
+    .stat { background: rgba(255,255,255,.92); border-radius: 3.4cqw; padding: 3cqw 3.4cqw; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.14); }
+    .stat b { display: block; font: 500 9cqw/1 "Playfair Display", Georgia, serif; color: var(--gold); }
+    .stat span { font-size: 3.4cqw; font-weight: 700; }
+
+    /* 5 · choose a scent (the palette) */
+    .s5 .top { position: absolute; left: 7cqw; right: 7cqw; top: 31%; height: 28%; overflow: hidden; border-radius: 4cqw; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.14); }
+    .s5 .top .photo { object-position: 50% 58%; }
+    .s5 .layer { z-index: 1; }
+    .scents { margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4cqw; }
+    .scent { background: #fff; border-radius: 3.4cqw; padding: 3cqw 2.4cqw; text-align: center; box-shadow: 0 1.5cqw 4cqw rgba(47,58,44,.12); }
+    .scent i { display: block; width: 13cqw; height: 13cqw; border-radius: 50%; margin: 0 auto 2cqw; box-shadow: inset 0 -1.6cqw 3cqw rgba(0,0,0,.12); }
+    .scent b { display: block; font-size: 4.2cqw; }
+    .scent span { display: block; font-size: 3cqw; line-height: 1.3; color: #6b7466; margin-top: .6cqw; }
+    .gift { margin-top: 3cqw; text-align: center; font-size: 3.6cqw; font-weight: 800; background: var(--olive); color: var(--cream); border-radius: 99px; padding: 2.4cqw; }
+
+    /* how the card works */
+    .explain { display: grid; gap: 18px; padding: 10px 0 40px; }
+    .panel { background: #fff; border-radius: 22px; padding: 24px; box-shadow: 0 10px 28px rgba(47,58,44,.08); }
+    .panel h2 { font: 500 26px/1.15 "Playfair Display", Georgia, serif; margin: 0 0 14px; }
+    .funnel { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; counter-reset: f; }
+    .funnel li { counter-increment: f; display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: #4f5a4b; }
+    .funnel li::before { content: counter(f); flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--olive); color: var(--cream); font-weight: 800; font-size: 13px; line-height: 1; }
+    .funnel b { color: var(--olive); }
+    .bar { display: flex; height: 60px; border-radius: 14px; overflow: hidden; margin-bottom: 12px; }
+    .bar span { flex: 1; }
+    .sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; font-size: 13px; color: #4f5a4b; }
+    .sw b { display: block; color: var(--olive); }
+    .foot { text-align: center; color: #7d8777; font-size: 13px; padding: 0 20px 36px; }
+
+    @media (min-width: 1000px) {
+      .slides { overflow: visible; display: grid; grid-template-columns: repeat(5, 1fr); padding: 44px 32px 34px; }
+      .item { max-width: none; }
+      .wrap { padding: 0 32px; }
+      .explain { grid-template-columns: 1.3fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ribbon">Концепт для портфолио, товар придуман · <a href="../index.html">Вернуться к работам</a></div>
+
+  <div class="wrap intro">
+    <h1>Аромасвеча «Сады»</h1>
+    <p>Инфографика для карточки на Wildberries: главное фото и 4 слайда в одной палитре. Слайды идут по воронке продаж — от «зацепить взгляд» до «выбрать аромат». Формат 3:4, на телефоне листайте вбок.</p>
+  </div>
+
+  <div class="slides">
+    <!-- 1 · hook -->
+    <div class="item"><span class="num">1 · главное фото — зацепить</span><div class="slide s1">
+      <img class="photo" src="../img/stock/c-lit.jpg" alt="">
+      <div class="fade"></div>
+      <div class="medal"><b>50</b><span>часов<br>горения</span></div>
+      <div class="layer">
+        <span class="kicker">Новинка</span>
+        <p class="t">Аромасвеча <em>«Сады»</em></p>
+        <p class="lead">Соевый воск и деревянный фитиль</p>
+        <div class="pills">
+          <span class="pill"><i></i>Натуральный состав</span>
+          <span class="pill"><i></i>Потрескивает как камин</span>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- 2 · what is inside -->
+    <div class="item"><span class="num">2 · состав — объяснить</span><div class="slide s2">
+      <img class="photo" src="../img/stock/c-jar.jpg" alt="">
+      <div class="fade"></div>
+      <div class="layer">
+        <span class="kicker">Состав</span>
+        <p class="t">Что <em>внутри</em></p>
+      </div>
+      <div class="callout" style="left:4cqw; top:43%"><div class="box"><b>Золотая крышка</b>Аромат не выветривается</div><div class="line" style="width:13cqw"></div><div class="dot"></div></div>
+      <div class="callout right" style="right:4cqw; top:60%"><div class="box"><b>100% соевый воск</b>Без парафина и копоти</div><div class="line" style="width:11cqw"></div><div class="dot"></div></div>
+      <div class="callout" style="left:4cqw; top:77%"><div class="box"><b>Стеклянная банка</b>Пригодится после свечи</div><div class="line" style="width:14cqw"></div><div class="dot"></div></div>
+    </div></div>
+
+    <!-- 3 · the detail that convinces -->
+    <div class="item"><span class="num">3 · деталь — убедить</span><div class="slide s3">
+      <img class="photo" src="../img/stock/c-wick.jpg" alt="">
+      <div class="fade"></div>
+      <div class="layer">
+        <span class="kicker">Фишка</span>
+        <p class="t">Деревянный <em>фитиль</em></p>
+        <p class="lead">Тихо потрескивает, как дрова в камине</p>
+        <div class="feats">
+          <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="#e9cf98" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 6 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-5 .5 1.5 1.5 2.5 3 3-1-3 0-6 0-8Z"/></svg>Ровное пламя</div>
+          <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="#e9cf98" stroke-width="1.8" stroke-linecap="round"><path d="M4 15c2-2 4-2 6 0s4 2 6 0 3-2 4-1"/><path d="M4 10c2-2 4-2 6 0s4 2 6 0 3-2 4-1"/></svg>Без дыма</div>
+          <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="#e9cf98" stroke-width="1.8" stroke-linecap="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>Уютный треск</div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- 4 · size and burn time -->
+    <div class="item"><span class="num">4 · размеры — снять сомнения</span><div class="slide s4">
+      <img class="photo" src="../img/stock/c-lid.jpg" alt="">
+      <div class="fade"></div>
+            <div class="dim v" style="left:91cqw; top:22%; height:53%"><span>9 см</span></div>
+      <div class="dim h" style="left:40cqw; top:80%; width:46cqw"><span>Ø 8 см</span></div>
+      <div class="layer">
+        <span class="kicker">Размеры</span>
+        <p class="t">Надолго <em>хватит</em></p>
+        <div class="stats">
+          <div class="stat"><b>50 ч</b><span>горения</span></div>
+          <div class="stat"><b>200 г</b><span>воска</span></div>
+        </div>
+      </div>
+    </div></div>
+
+    <!-- 5 · choose a scent -->
+    <div class="item"><span class="num">5 · ароматы — помочь выбрать</span><div class="slide s5">
+      <div class="top"><img class="photo" src="../img/stock/c-home.jpg" alt=""></div>
+      <div class="layer">
+        <span class="kicker">Ароматы</span>
+        <p class="t">Выберите <em>свой сад</em></p>
+        <div class="scents">
+          <div class="scent"><i style="background:radial-gradient(circle at 35% 30%,#ffd0dc,var(--peony))"></i><b>Пион</b><span>нежный, цветочный</span></div>
+          <div class="scent"><i style="background:radial-gradient(circle at 35% 30%,#d6e6bf,var(--fig))"></i><b>Инжир</b><span>тёплый, сладкий</span></div>
+          <div class="scent"><i style="background:radial-gradient(circle at 35% 30%,#e2d6fa,var(--lav))"></i><b>Лаванда</b><span>спокойный, для сна</span></div>
+        </div>
+        <div class="gift">Готова к подарку — в коробке</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="wrap explain">
+    <div class="panel">
+      <h2>Как устроена карточка</h2>
+      <ol class="funnel">
+        <li><span><b>Зацепить.</b> На главном фото — товар, название и одна сильная цифра. Покупатель листает ленту и должен остановиться.</span></li>
+        <li><span><b>Объяснить.</b> Выноски показывают, из чего сделан товар и почему это важно.</span></li>
+        <li><span><b>Убедить.</b> Одна фишка, которой нет у конкурентов, — крупно и с фото.</span></li>
+        <li><span><b>Снять сомнения.</b> Размеры, вес и время горения, чтобы не было неожиданностей.</span></li>
+        <li><span><b>Помочь выбрать.</b> Варианты товара и подарочная упаковка — последний толчок к покупке.</span></li>
+      </ol>
+    </div>
+    <div class="panel">
+      <h2>Палитра</h2>
+      <div class="bar"><span style="background:var(--olive)"></span><span style="background:var(--cream)"></span><span style="background:var(--sand)"></span><span style="background:var(--gold)"></span></div>
+      <div class="sw">
+        <span><b>Олива</b>#2F3A2C</span><span><b>Крем</b>#F5EFE6</span><span><b>Песок</b>#E8DCCB</span><span><b>Золото</b>#B8914D</span>
+      </div>
+      <p style="margin:16px 0 0;font-size:14px;color:#4f5a4b">Цвета взяты из самого товара: золотая крышка, белый воск, дерево. Ароматы отмечены своими цветами: пион, инжир и лаванда.</p>
+    </div>
+  </div>
+
+  <p class="foot">Концепт инфографики для портфолио Александры. Товар придуман. Фото: StockSnap и rawpixel, CC0.</p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вика · ногти — концепт мультиссылки</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/playfair-display-cyrillic-500-italic.woff2") format("woff2"); unicode-range: U+0400-045F; }
+    @font-face { font-family: "Manrope"; font-weight: 200 800; font-display: swap; src: url("../fonts/manrope-cyrillic-wght-normal.woff2") format("woff2"); unicode-range: U+0400-045F; }
+    @font-face { font-family: "Manrope"; font-weight: 200 800; font-display: swap; src: url("../fonts/manrope-latin-wght-normal.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+20BD; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; color: #3a1f2b;
+      font: 15px/1.5 Manrope, system-ui, sans-serif;
+      background: radial-gradient(90% 60% at 50% 0%, #ffd9e3 0%, rgba(255,217,227,0) 70%), radial-gradient(80% 60% at 100% 100%, #ffe8d6 0%, rgba(255,232,214,0) 70%), #fff6f3;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .ribbon { width: 100%; background: #3a1f2b; color: #fff; text-align: center; font-size: 13px; padding: 8px 16px; }
+    .ribbon a { color: #ffc6d5; }
+    .page { width: 100%; max-width: 420px; padding: 36px 20px 40px; text-align: center; }
+    .ava {
+      width: 112px; height: 112px; margin: 0 auto 16px; border-radius: 50%;
+      background: conic-gradient(from 200deg, #ff8fb1, #ffc28f, #ff8fb1);
+      padding: 4px; animation: spin 12s linear infinite;
+    }
+    .ava img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 25%; border: 3px solid #fff6f3; display: block; animation: spin 12s linear infinite reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 { font: italic 500 34px/1.1 "Playfair Display", Georgia, serif; margin: 0 0 6px; }
+    .sub { color: #7a5966; margin: 0 0 6px; }
+    .free { display: inline-block; margin: 10px 0 24px; padding: 6px 14px; border-radius: 999px; background: #fff; font-size: 13px; font-weight: 700; box-shadow: 0 6px 16px rgba(217,70,111,.12); }
+    .free i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #45c07a; margin-right: 6px; }
+    .links { display: grid; gap: 12px; }
+    .l {
+      display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 18px;
+      background: rgba(255,255,255,.85); color: #3a1f2b; text-decoration: none; font-weight: 700; text-align: left;
+      box-shadow: 0 8px 20px rgba(217,70,111,.08); transition: transform .2s, box-shadow .2s;
+    }
+    .l:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 28px rgba(217,70,111,.16); }
+    .l .ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; color: #fff; font-size: 13px; font-weight: 800; }
+    .l small { display: block; font-weight: 500; color: #8a6a76; font-size: 13px; }
+    .l.main { background: #3a1f2b; color: #fff; }
+    .l.main small { color: #ffc6d5; }
+    .price { margin-top: 26px; background: #fff; border-radius: 22px; padding: 18px 20px; text-align: left; box-shadow: 0 8px 20px rgba(217,70,111,.08); }
+    .price h2 { margin: 0 0 6px; font: italic 500 22px "Playfair Display", Georgia, serif; }
+    .price div { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px dashed #f3d3dc; color: #6b4a57; }
+    .price b { color: #3a1f2b; }
+    .pics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; }
+    .pics img { aspect-ratio: 1; width: 100%; border-radius: 14px; object-fit: cover; display: block; }
+    .foot { margin-top: 28px; font-size: 12px; color: #a3848f; }
+  </style>
+</head>
+<body>
+  <div class="ribbon">Концепт для портфолио, мастер придуман · <a href="../index.html">Вернуться к работам</a></div>
+  <div class="page">
+    <div class="ava"><img src="../img/stock/vika.jpg" alt="Мастер Вика"></div>
+    <h1>Вика · ногти</h1>
+    <p class="sub">Маникюр и педикюр с любовью к деталям<br>Ставрополь, Юго-Западный район</p>
+    <span class="free"><i></i>Есть окна на этой неделе</span>
+
+    <div class="links">
+      <a class="l main" href="#"><span class="ic" style="background:linear-gradient(135deg,#ff8fb1,#d9466f)">✓</span><span>Записаться онлайн<small>Выберите удобное время</small></span></a>
+      <a class="l" href="#"><span class="ic" style="background:#2aa3e0">TG</span><span>Написать в Telegram<small>Отвечаю в течение часа</small></span></a>
+      <a class="l" href="#"><span class="ic" style="background:#4b7bec">VK</span><span>Работы во ВКонтакте<small>Новые дизайны каждый день</small></span></a>
+      <a class="l" href="#"><span class="ic" style="background:#ffb347">📍</span><span>Как добраться<small>Открыть в Яндекс Картах</small></span></a>
+    </div>
+
+    <div class="price">
+      <h2>Прайс</h2>
+      <div>Маникюр без покрытия<b>800 ₽</b></div>
+      <div>Маникюр + гель-лак<b>1 600 ₽</b></div>
+      <div>Дизайн 1 ноготь<b>от 50 ₽</b></div>
+      <div>Педикюр + гель-лак<b>2 000 ₽</b></div>
+    </div>
+
+    <div class="pics">
+      <img src="../img/stock/vika-1.jpg" alt="Нежный маникюр">
+      <img src="../img/stock/vika-2.jpg" alt="Синий гель-лак">
+      <img src="../img/stock/vika-3.jpg" alt="Красный маникюр">
+    </div>
+    <p class="foot">Концепт мультиссылки для портфолио Александры · фото: StockSnap и rawpixel, CC0</p>
+  </div>
+</body>
+</html>
